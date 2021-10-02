@@ -124,3 +124,15 @@ class Partition:
     
     def mount(self):
         pass
+
+
+layout = {
+    'filesystem': 'vfat',
+    'start': '1Mb',
+    'end': '524Mb',
+    'label': 'EFI',
+    'bootable': True
+}
+
+disk = Disk('/dev/sda')
+disk.partition(layout)
